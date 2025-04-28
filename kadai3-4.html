@@ -30,16 +30,15 @@
 
             // 商品購入の関数
             function buyItem(no) {
-
                 if (no>=0 && no<=8) {
-                    console.log("商品番号が正しくありません。");
-                } else {
                     console.log("商品番号: " + item.id + ", 商品名: " + item.name + "を購入します。");
                     if (item.stock > 0) {
                         item.stock--; // 在庫を減らす
                     } else {
                         console.log("在庫がありません。");
                     }
+                } else {
+                    console.log("商品番号が正しくありません。");
            　　 }
             }
                 showItemList(); // 商品一覧の表示関数呼び出し
