@@ -30,10 +30,8 @@
 
             // 商品購入の関数
             function buyItem(no) {
-                
-                const item = items.find(x => x.id === no);
 
-                if (!item) {
+                if (no>=0 && no<=8) {
                     console.log("商品番号が正しくありません。");
                 } else {
                     console.log("商品番号: " + item.id + ", 商品名: " + item.name + "を購入します。");
