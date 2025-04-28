@@ -31,9 +31,19 @@
             // 商品購入の関数
             function buyItem(no) {
                 
-                if(items.stock>0){
-                    console.log(”商品番号: "+items.id+", 商品名: "+items.name+"を購入します");
-                }
+                const item = items.find(x => x.id === no);
+
+                if (!item) {
+                    console.log("商品番号が正しくありません。");
+                } else {
+                    console.log("商品番号: " + item.id + ", 商品名: " + item.name + "を購入します。");
+                    if (item.stock > 0) {
+                        item.stock--; // 在庫を減らす
+                    } else {
+                        console.log("在庫がありません。");
+                    }
+           　　 }
+            }
                 showItemList(); // 商品一覧の表示関数呼び出し
             }
 
